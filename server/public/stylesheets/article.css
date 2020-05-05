@@ -1,0 +1,41 @@
+article {
+	float:right;
+	width:895px;
+	animation-delay:0.1s;
+}
+
+article::after{
+	content:'';
+	display: block;
+	clear: both;
+}
+
+div#content {
+	padding:50px;
+	width:100%;
+	height:auto;
+	font-family: 'Courier New', Courier, monospace;
+	background-color:white;
+	margin-bottom: 10px;
+	box-shadow:0 0 2px #000;
+	font-size: 16px;
+	line-height: 32px;
+	opacity: 0.9;
+}
+
+
+.title {
+	font-size:14px;
+	opacity:0.75;
+}
+
+
+/* more */
+p.more{
+	margin:0 auto;
+	text-align:center;
+	cursor:pointer;
+	width:78px;
+	color:blue;
+	border-bottom:1px solid blue;
+}

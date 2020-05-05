@@ -1,0 +1,42 @@
+extends layout
+
+block link
+  link(rel='stylesheet' href='/stylesheets/blog.css')
+  link(rel='stylesheet' href='/stylesheets/makePage.css')
+
+block nav
+  a(href='/')
+    p.on Blog
+  a(href='/archives')
+    p Archives
+
+block summary
+  p.my Larry
+  div.postNums #{postNums} 
+    span posts
+  
+block content
+  article
+    div.article
+      - for(let i=0; i<posts.length; i++){
+          div(class='articleWrap fadeIn')
+            form(method='post' action='/article')
+              input(name='id', value=posts[i].id style='display:none')
+              p.title #{posts[i].articleName}
+              p.time Posted On #{posts[i].postTime}
+              - if(posts[i].imgSrc) {
+                div.imgWrap
+                  div(class='img' style='background-image: url('+ posts[i].imgSrc + ')')
+              - }
+              
+              p.author #{posts[i].author}
+              p.abstract #{posts[i].summary}
+              input(type='submit' class='readmore' name='readmore' value='readmore')
+      - }
+    ul.ul
+        li(class='prev disable') 上一页
+        li.next 下一页
+
+block script
+  script(type='module' src='/javascripts/index.js')
+  script(type='module' src='/javascripts/makePage.js')

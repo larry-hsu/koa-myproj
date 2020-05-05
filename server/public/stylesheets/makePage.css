@@ -1,0 +1,50 @@
+.ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.ul li {
+    display: flex;
+    min-width: 28px;
+    height:30px;
+    align-items: center;
+    color:black;
+    border-radius: 4px;
+    margin: 0 2px;
+    cursor: pointer;
+    justify-content: center;
+    padding:0 4px;
+    user-select: none;  /* 阻止双击出现蓝色背景 */
+    box-shadow:0 0 2px #000;
+    background: white;
+    transition: background-color 0.3s;
+}
+
+.ul li:hover{
+    background: #e8e8e8;
+}
+
+.ul li.ellipsis {
+    box-shadow:0 0 0 #000;
+    cursor: auto;
+}
+
+.ul li.ellipsis:hover{
+    background: transparent;
+}
+
+.ul li.active{
+    background: #e1e1e1;
+    color:#636363;
+    cursor:auto;
+}
+
+.ul li.disable {
+    color: #c3c3c3;
+    cursor: auto;
+}
+
+.ul li.disable:hover{
+    background: white;
+}

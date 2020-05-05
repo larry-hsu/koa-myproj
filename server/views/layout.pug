@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title Larry·Hsu's Blog
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    link(type="image/x-icon" rel="shortcut icon" href="/logos/favicon.ico") 
+    link(rel='stylesheet' href='/stylesheets/blog_all.css')
+    link(rel='stylesheet' href='/stylesheets/animate.css')
+    link(rel='stylesheet' href='/stylesheets/media.css')
+    link(rel='stylesheet' href='/stylesheets/fonts.css')
+    block link
+
+  body
+    header(title='点击登陆')
+      div.triangle 
+        
+    section.container
+      aside.left
+        a(href='/')
+          div.black
+              h2 Larry
+              p Welcome to my Blog!
+        div.nav
+          block nav
+        div(id='abstract' class='summaryFirst')
+          block summary
+      block content
+    aside.backToTop
+      div.toChange
+        canvas(id='upArrow' width='34' height='34')
+
+    footer
+      p(style='color:grey; margin-bottom:10px;') 苏ICP备20008705号
+      p Designed and developed by Larry Hsu.
+      p Copyright &copy 2018-2020 larryhsu.com. All Rights Reserved.
+
+    script(type='module' src='/javascripts/root.js')
+    block script

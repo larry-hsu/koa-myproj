@@ -1,0 +1,165 @@
+@import 'vars.less';
+
+div#pic{
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-color: #f6f6f6;
+    margin-bottom: 10px;
+    background-size: 100% 100%;
+    background-position: center;
+    @pointer();
+
+    & p{
+        position: relative;
+        color: grey;
+        top: 100px;
+        width: 100px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+#canWrap {
+    position: relative;
+    text-align: center;
+    top: 80px;
+    width: 35px;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 4px;
+    background-color: #cacaca;
+}
+
+input{
+    .inputOfSth(@height:30px, @fontSize:16px){
+        width: 100%;
+        height: @height;
+        font-size: @fontSize;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+        border: none;
+        outline: none;
+    }
+
+    &#title{
+        .inputOfSth(50px, 30px);
+        font-weight: bold;
+    }
+
+    &#author{
+        .inputOfSth();
+    }
+
+    &#summary{
+        .inputOfSth();
+    }
+}
+
+@controlBar: {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+div.normal {
+    @controlBar();
+    position: relative;
+    width: 100%;
+}
+
+div.fixed {
+    @controlBar();
+    position: fixed;
+    top: 60px;
+    z-index: 99;
+    background-color: white;
+}
+
+button[id^='e'] {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: grey;
+    border-radius: 3px;
+
+    &:hover{
+        background-color: #f6f6f6;
+    }
+}
+
+#content{
+    .title(@mgnTop, @mgnBot, @fontSize){
+        margin-top: @mgnTop;
+        margin-bottom: @mgnBot;
+        padding: 0;
+        font-size: @fontSize;
+    }
+
+    width: 100%;
+    min-height: 1000px;
+    font-size: 16px;
+    line-height: 32px;
+    outline: none;
+    opacity: 0.9;
+    @CourierNewFont();
+
+    &:empty:before{
+        content: '请输入正文';
+        color: grey;
+    }
+
+    &:focus::before{
+        content: none;
+    }
+
+    & ul{
+        margin-left: 20px;
+    }
+
+    & div{
+        margin-bottom: 12px;
+    }
+
+    & h2 {
+        .title(10px, 10px, 24px);
+    }
+    
+    & h4 {
+        .title(6px, 6px, 20px);
+    }
+
+    & .code {
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        padding: 20px;
+        border: 2px solid #E0DFCC;
+        background-color: #ecdfd6;
+    }
+
+    & .blockquote {
+        display: block;
+        margin: 0px;
+        padding-left: 10px;
+        width: 100%;
+        height: auto;
+        border-left: 2px solid #d3d3d3;
+        color: grey;
+        font-size: 14px;
+        line-height: 24px;
+        word-wrap: break-word;
+        @CourierNewFont();
+    }
+
+    & blockquote {
+        display: inline-block;
+    }
+}

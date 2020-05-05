@@ -1,0 +1,39 @@
+extends loginLayout
+block title
+  title login
+
+block header
+  div.left
+    a(href='/')
+      span Larry's blog
+    ul
+      a(href='/')
+        li 首页
+      a(href='/sign/signIn')
+        li.on 登入
+      a(href='/sign/signUp')
+        li 注册
+
+block content
+  section
+    if cuee
+      div.cue #{cuee}
+    else
+      div(style='height:40px')
+
+    div.head
+      h1 登入
+    div.form
+      form(method='post')
+        label(for="username") 用户名
+        input(type="text" id="username" name="username" required ) 
+        br
+        label(for="password") 口令
+        input(type="password" id="password" name="password" required )
+        br
+        div.submit
+          label
+          button(type="submit") 登入
+    
+
+

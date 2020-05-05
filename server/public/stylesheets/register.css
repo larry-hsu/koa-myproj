@@ -1,0 +1,7 @@
+span.tip{
+  display: inline-block;
+  margin-left:20px;
+  width:auto;
+  color:red;
+  font-size: 16px;
+}

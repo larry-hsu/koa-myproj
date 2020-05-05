@@ -1,0 +1,34 @@
+@media screen and (max-width: 900px) {
+  *{
+    margin:0;
+    padding:0;
+  }
+  .contentWrap {
+    float:right;
+    width: 100%;
+  }
+
+
+  .abs::before{
+    position: absolute;
+    content:'\21E2' !important;
+    font-size:16px;
+  }
+
+  .year::before {
+    position: absolute;
+    content:'\21E2' !important;
+    font-size:14px;
+  }
+
+  .content::before {
+    position: absolute;
+    content:'\21E2' !important;
+    font-size:10px;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  
+}

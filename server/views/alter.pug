@@ -1,0 +1,46 @@
+extends user_header
+
+block title
+  title 修改文章
+
+block link
+  link(rel='stylesheet' href='/stylesheets/alter.css')
+  link(rel='stylesheet' href='/stylesheets/richtext.css')
+
+block right
+  span.right 
+      input(id='post' class='unavailable' type='button' value='更新') 
+
+block content
+  section
+    form(id='postArticle' enctype="multipart/form-data" method='post')
+      div(id='pic' style=`background-image: url(${imgSrc})`)
+        div#canWrap
+          canvas(id='canPic' width='35' height='30')
+        p#addPic 添加图片(1920*540) 
+        label(style='display:none')
+          input(id='upInput' type='file' name='file1')
+          
+      input(id='title' name='title' type='text' placeholder='请输入标题(最多50个字)' value=title)
+      input(id='summary' name='summary' type='text' placeholder='请用一句话概括你的故事' value=summary)
+      div(id='control' class='normal')
+        button(id='ebold' title='加粗') B
+        button(id='eitalic' title='斜体') 
+          i I
+        button(id='etitle' title='一级标题') I
+        button(id='etitle2' title='二级标题') II
+        button(id='eblock' title='引用') Q
+        button(id='eul' title='列表') L
+        button(id='ecolor' title='设置字体颜色') C
+        button(id='eline' title='横线') S
+        button(id='eindent' title='缩进') R
+
+      div(id='content' contenteditable=true)
+      input(id='text' name='content' type='hidden' value=content)
+      
+block scripts
+  script(type='module' src='/javascripts/alterArticle.js')
+  script(type='module' src='/javascripts/richEdit.js')   
+    
+    
+

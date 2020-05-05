@@ -1,0 +1,33 @@
+extends user_header
+
+block title
+  title 个人中心
+  
+block link
+  link(rel='stylesheet' href='/stylesheets/personal.css')
+
+block right
+  span(class='right')
+    - if(limit > 1) {
+        a(href='/user/edit_data')
+          input(class='btn' type='button' value='编辑资料') 
+    - }
+
+block content
+  section
+      div.succ
+        - if(limit == 1) {
+            span 您好，'#{succ}'。只有被邀请的人才能写文章哦，联系我吧 larry_hsu@yeah.net。
+        - }
+        - else if(limit == 2) {
+            span 您好，您的笔名为 '#{succ}'。不满意的话可以点击右上角编辑资料修改哦。
+        - }
+        - else if (limit == 3) {
+            span 您好，'#{succ}'。您的身份是管理员。
+        - }
+        - if(signature) {
+            p.signature #{signature}
+        - }
+        
+
+

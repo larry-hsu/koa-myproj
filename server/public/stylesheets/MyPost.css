@@ -1,0 +1,59 @@
+section {
+  padding-top:130px;
+  padding-left:20%;
+  padding-right: 20%;
+}
+
+
+p.articleNum {
+  position: relative;
+  font-size:18px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+div.post {
+  padding:15px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+p.title {
+  font-size:20px;
+  font-weight: bold;
+  margin-bottom:5px;
+  cursor:pointer;
+}
+
+span[class^='x'] {
+  display: inline-block;
+  opacity: 0.6;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+span.xtime{
+  width: 120px;
+}
+
+span.xauthor {
+  width: 80px;
+  margin-right:10px;
+}
+
+input[class^='x'] {
+  margin:0;
+  padding:0;
+  width: 50px;
+  text-align: center;
+  background: transparent;
+  margin-right:20px;
+  font-size:15px;
+  cursor:pointer;
+  opacity: 0.7;
+  outline:none;
+}
+
+form{
+  display: inline-block;
+}
+

@@ -1,0 +1,36 @@
+extends layout
+
+block link
+  link(rel='stylesheet' href='/stylesheets/archives.css')
+  link(rel='stylesheet' href='/stylesheets/arch_media.css')
+
+block nav
+  a(href='/')
+    p Blog
+  a(href='/archives')
+    p.on Archives
+
+block summary
+  p.my Larry
+  div.postNums #{postNumber} 
+    span posts
+
+block content
+  article
+    div.wrap
+      div.contentWrap
+        div.abs Um..! #{postNumber} posts in total. Keep on posting.
+        - for(let i=0; i < archives.length; i++) {
+            div.year #{archives[i].year}
+            - for(let keys in archives[i]) {
+                - if(keys !== 'year') {
+                    div.content #{archives[i][keys]}
+                - }
+            - }
+        - }
+    
+    
+ 
+    
+
+

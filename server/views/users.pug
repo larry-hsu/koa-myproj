@@ -1,0 +1,54 @@
+extends user_header
+block title
+  title 管理用户
+block link
+  link(rel='stylesheet' href='/stylesheets/users.css')
+
+block content
+  section
+    article
+      p.userNum #{users.length} 位用户
+      - for(let i=0; i < users.length; i++) {
+        div.post
+          span.name 用户名：
+            - if(users[i].admin == 1) {
+                span.fish #{users[i].username}
+            - }
+            - else if(users[i].admin == 2) {
+                span.member #{users[i].username}
+            - }
+            - else if(users[i].admin == 3) {
+                span.root #{users[i].username}
+            - }
+          span.name 角色：
+            - if(users[i].admin == 1) {
+                span.fish 咸鱼
+            - }
+            - else if(users[i].admin == 2) {
+                span.member 会员
+            - }
+            - else if(users[i].admin == 3) {
+                span.root root
+            - }
+                
+          form(method='post')
+            input(class='userID' type='hidden' name='userID' value=users[i].id)
+            input(class='apart' type='hidden' name='apart')
+            - if(users[i].admin == 1){
+                input(class='xmember' type='button' value='设为会员')
+                input(class='xfish' type='hidden' value='设为咸鱼')
+            - }
+            - else if(users[i].admin == 2) {
+                input(class='xfish' type='button' value='设为咸鱼')
+                input(class='xmember' type='hidden' value='设为会员')
+            - } else if(users[i].admin == 3) {
+                input(class='xfish' type='hidden' value='设为咸鱼')
+                input(class='xmember' type='button' value='大佬你好' disabled)
+            - }
+            
+            input(class='xreset' type='button' value='重置密码')
+            input(class='xdelete' type='button' value='删除用户')
+      - }
+      
+block scripts
+  script(type='module' src='/javascripts/users.js')

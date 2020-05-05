@@ -1,0 +1,26 @@
+extends layout
+
+block link
+  link(rel='stylesheet' href='/stylesheets/richtext.css')
+  link(rel='stylesheet' href='/stylesheets/article.css')
+  
+
+block nav 
+  a(href='/')
+    p.on Blog
+  a(href='/archives')
+    p Archives
+
+block summary
+  p.my #{author}
+  div.title  
+    span #{title}
+
+block content
+  article#blog 
+    div#content 
+    div(id='tmp' style='display:none') #{tmp_content} 
+  
+block script
+  script(type='module' src='/javascripts/article.js')
+  

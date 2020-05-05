@@ -1,0 +1,53 @@
+@media screen and (max-width: 900px) {
+  *{
+    margin:0;
+    padding:0;
+  }
+  aside.wrap{
+    display: none;
+  }
+
+  section.container {
+    width:100%;
+  }
+
+  aside.left {
+    float: left;
+    width:100%;
+  }
+
+  article {
+    float:left;
+    width:100% !important;
+  }
+
+  #abstract{
+    display: none;
+  }
+
+  div.articleWrap{
+    width:100%;
+  }
+  aside.backToTop{
+    display: none;
+  }
+
+  footer {
+    margin:0 auto;
+    font-size:14px;
+  }
+
+  .img {
+    height:180px !important;
+  }
+  
+  .time:before{
+    top:1px !important;
+  }   
+}
+
+@media screen and (max-width: 500px) {
+  .img {
+    height:100px !important;
+  }
+}

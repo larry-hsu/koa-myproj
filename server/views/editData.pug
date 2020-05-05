@@ -1,0 +1,31 @@
+extends user_header
+
+block title
+  title 编辑个人资料
+
+block link
+  link(rel='stylesheet' href='/stylesheets/editData.css')
+
+
+block right
+  span.right 
+    input(id='post' class='unavailable' type='button' value='保存') 
+
+block content
+  section
+    form(id='editData' method='post')
+      div.field 
+        span.h3 笔名
+        div.field-content 
+          input(id='nickname' type='text' name='nickname' value=nickname maxLength='10')
+       
+      div.field 
+        span.h3 个性签名
+        div.field-content 
+          input(id='signature' type='text' name='signature' value=signature maxLength='50')
+
+block scripts
+  script(type='module' src='/javascripts/editData.js') 
+    
+    
+

@@ -1,0 +1,112 @@
+@import 'vars.less';
+
+section {
+    position: relative;
+    padding: 100px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+input {
+    &.available {
+        outline: none;
+        padding: 0;
+        width: 80px;
+        font-size: 16px;
+        height: 30px;
+        text-align: center;
+        background: transparent;
+        color: #0084ff;
+        border: 1px solid #0084ff;
+        @pointer();
+    }
+
+    &.unavailable {
+        outline: none;
+        padding: 0;
+        width: 80px;
+        font-size: 16px;
+        height: 30px;
+        text-align: center;
+        background: transparent;
+        color: grey;
+        border: 1px solid grey;
+    }
+}
+
+div.more {
+    position: relative;
+    float: right;
+    margin-left: 20px;
+    width: 30px;
+    height: 55px;
+    @pointer();
+    -moz-user-select: none;
+    /*火狐*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    -ms-user-select: none;
+    /*IE10*/
+    -khtml-user-select: none;
+    /*早期浏览器*/
+    user-select: none;
+}
+
+.more-canvas {
+    margin-top: 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        overflow: hidden;
+        background-color: #000;
+    }
+}
+
+a.none {
+    color: #8590A6;
+}
+
+/* 三角形对话框 */
+div.more-detail {
+    position: fixed;
+    top: 60px;
+    right: 24px;
+    width: 150px;
+    height: auto;
+    color: #8590A6;
+    font-weight: bold;
+    padding: 8px 0px;
+    margin: 0;
+    border-radius: 4px;
+    border:1px solid rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+    background-color: white;
+    z-index:1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -9px;
+        right: 60px;
+        background:inherit;
+        padding:8px;
+        border:inherit;
+        border-right:0;
+        border-bottom:0;
+        transform: rotate(45deg);
+        z-index:-1;
+    }
+}
+
+div.more-draft {
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 3px 0 3px 12px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #f6f6f6;
+    }
+}

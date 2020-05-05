@@ -1,0 +1,30 @@
+extends loginLayout
+block title
+block link
+
+block header
+  div.left
+    a(href='/')
+      span.logo Larry's blog
+    ul.header-ul
+      a(href='/user/my')
+        li(class='header-li') 首页
+      
+      - if(limit == 2) {
+          a(href='/user/MyPost')
+            li(class='header-li') 文章
+      - }
+      - else if(limit == 3) {
+          a(href='/user/MyPost')
+            li(class='header-li') 文章
+          a(href='/user/person')
+            li(class='header-li') 用户
+      - }
+        
+      a(href='/sign/signOut')
+        li 退出
+  block right
+
+block content
+block scripts
+

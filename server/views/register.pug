@@ -1,0 +1,52 @@
+extends loginLayout
+block title
+  title register
+
+block link
+  link(rel='stylesheet' href='/stylesheets/register.css')
+
+block header
+  div.left
+    span Larry's blog
+    ul
+      a(href='/')
+        li 首页
+      a(href='/sign/signIn')
+        li 登入
+      a(href='/sign/signUp')
+        li.on 注册
+        
+block content
+  section
+    if cuee
+      div.cue #{cuee}
+    else if succ
+      div.succ #{succ}
+    else
+      div(style='height:40px')
+
+    div.head
+      h1 用户注册
+    div.form
+      form(method='post')
+        label(for="username") 用户名
+        input(type="text" class="input-xlarge" id="username" name="username" required maxLength=20) 
+        br
+        label
+        span.help-block 你的账户名称，用于登录和显示。
+        br
+        label(for="password") 口令
+        input(type="password" id="password" name="password" required ) 
+        span(class='tip' id='pass-tip')
+        br
+        label(for="password-repeat") 重复输入口令
+        input(type="password" id='password-repeat' name="password_repeat" required) 
+        span(class='tip' id='repass-tip')
+        br
+        div.submit
+          label
+          button(id='btn' type="submit") 注册
+        
+block scripts
+  script(type='module' src='/javascripts/register.js')
+

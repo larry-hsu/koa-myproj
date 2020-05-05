@@ -1,0 +1,33 @@
+body section {
+    position: relative;
+    padding:100px;
+    padding-left:20%;
+    padding-right: 20%;
+}
+  
+  
+input.available{
+    outline: none;
+    padding:0;
+    width: 80px;
+    font-size:16px;
+    height:30px;
+    text-align: center;
+    background: transparent;
+    color:#0084ff;
+    border:1px solid #0084ff;
+    cursor: pointer;
+}
+  
+input.unavailable{
+    outline: none;
+    padding:0;
+    width: 80px;
+    font-size:16px;
+    height:30px;
+    text-align: center;
+    background: transparent;
+    color:grey;
+    border:1px solid grey;
+}
+  

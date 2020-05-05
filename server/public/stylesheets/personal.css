@@ -1,0 +1,12 @@
+section {
+  padding-top:130px;
+  padding-left:20%;
+  padding-right: 20%;
+}
+
+p.signature {
+  text-align: right;
+}
+p.signature:before {
+  content: '——';
+}

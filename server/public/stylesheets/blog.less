@@ -1,0 +1,116 @@
+@import 'vars.less';
+
+article {
+	float:right;
+    width:895px;
+    
+    &::after{
+        @clearFloat();
+    }
+}
+
+.articleWrap{
+	position: relative;
+	box-shadow:0 0 2px #000;
+	padding:50px;
+	width:100%;
+	height:auto;
+	background-color:white;
+	margin-bottom: 10px;
+    opacity: 0;
+    
+    & .title {
+        text-align:center;
+        font-size:2.8rem;
+        color:#555555;
+        @pointer();
+    }
+
+    & .time{
+        position: relative;
+        text-align:center;
+        color:#aeaeae;
+        font-size:1.4rem;
+        margin:10px;
+        margin-bottom: 50px;
+        @CourierNewFont();
+
+        &::before{
+            content:'';
+            position: absolute;
+            margin-left:-16px;
+            top:1px;
+            width:12px;
+            height:12px;
+            background:url(/logos/calendar.png) no-repeat center;
+            filter: grayscale(10%);
+            background-size: 100% 100%;
+        }
+    }
+
+    & .imgWrap{
+        border:1px solid grey;
+        width:100%;
+        padding:3px;
+        margin-bottom:40px;
+
+        & .img{
+            margin:0 auto;
+            text-align:center;
+            background-size: 100% 100%;
+            height:220px;
+        }
+    }
+
+    & .author{
+        position: relative;
+        color:#555555;
+        font-size:2.2rem;
+        margin-bottom:20px;
+        font-family: 'Tahoma';
+        
+        &::after{
+            content:'';
+            display: block;
+            border-bottom:1px dotted grey;
+            opacity: 0.3;
+        }
+    }
+
+    & .abstract{
+        margin-bottom:40px;
+        font-size:1.6rem;
+    }
+
+    & .readmore {
+        display: block;
+        margin: 0 auto;
+        border:2px solid black;
+        outline:none;
+        width:120px;
+        height:30px;
+        font-size:1.6rem;
+        padding:2px 15px;
+        background-color: white;
+        transition: background-color 0.6s;
+        
+        &:hover {
+            border:2px solid  black;
+            color:white;
+            background-color:black !important;
+        }
+    }
+
+}
+
+.animation(@name){
+    animation:@name 0.3s ease-in-out 0.1s forwards;
+}
+
+.fadeIn {
+	.animation(slideUp);
+}       
+
+.showUp{
+    .animation(showUp);
+}

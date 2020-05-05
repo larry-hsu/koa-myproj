@@ -1,0 +1,93 @@
+@keyframes clickToLogin
+{
+  0%   {background:black;}
+  25%  {background:rgb(255, 72, 0);}
+  50%  {background:rgb(111, 0, 255);}
+  75% {background:rgb(44, 139, 0);}
+  100% {background:rgb(18, 58, 0);}
+}
+
+@keyframes slideDown_75{
+  from {
+    top:-10px;
+    opacity:0;
+  }
+  to {
+    top:0px;
+    opacity: 0.75;
+  }
+}
+
+@keyframes slideDown_8{
+  from {
+    top:-20px;
+    opacity:0;
+  }
+  to {
+    top:0px;
+    opacity: 0.8;
+  }
+}
+
+@keyframes slideDown_10{
+  from {
+    top:-20px;
+    opacity:0;
+  }
+  to {
+    top:0px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp{
+  from{
+    top:25px;
+    opacity: 0;
+  }
+  to{
+    top:0px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeAway{
+  from{
+    top:0px;
+    opacity: 1;
+  }
+  to{
+    top:25px;
+    opacity:0;
+  }
+}
+
+@keyframes showUp{
+  from　{
+    opacity: 0;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes hideDown{
+  from{
+    opacity: 1 ;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+/* position=relative */
+@keyframes leftToRight {
+  from {
+    opacity: 0;
+    left:-10px;
+  }
+  to{
+    opacity: 0.75;
+    left:0px;
+  }
+} 

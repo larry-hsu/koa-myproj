@@ -1,0 +1,32 @@
+extends user_header
+block title
+  title 我的文章
+block link
+  link(rel='stylesheet' href='/stylesheets/MyPost.css')
+
+block right
+  span.right 
+    a(href='/user/write')
+      input(class='btn' type='button' value='写文章') 
+
+block content
+  section
+    article
+      p.articleNum #{articleNum} 篇文章
+      - for(let i=0; i < article.length; i++) {
+        div.post
+          p.title #{article[i].articleName}
+          span.xauthor #{article[i].author}
+          span.xtime #{article[i].postTime}
+          
+          form(method='post')
+            input(class='postID' type='hidden' name='id' value=article[i].id)
+            input(class='apart' type='hidden' name='apart')
+            input(class='xalter' type='button' value='编辑')
+            input(class='xdelete' type='button' value='删除')
+      - }
+      
+block scripts
+  script(type='module' src='/javascripts/MyPost.js')  
+
+
